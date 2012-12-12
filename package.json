@@ -1,0 +1,26 @@
+{
+  "name": "?",
+  "author": {
+    "name": "Fedor Golubev",
+    "email": "gregof@yandex.ru",
+    "url": "http://github.com/gregof"
+  },
+  "description": "",
+  "version": "0.1.0",
+  "dependencies": {
+    "abc": "0.5.x",
+    "fsa": "0.1.x"    
+  },
+  "devDependencies": {
+    "tc": "0.4.x"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": ">=0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "main": "./lib/index.js"
+}
