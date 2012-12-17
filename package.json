@@ -9,10 +9,10 @@
   "version": "0.1.0",
   "dependencies": {
     "abc": "0.5.x",
-    "fsa": "0.1.x"    
+    "fsa": "0.3.x"    
   },
   "devDependencies": {
-    "tc": "0.4.x"
+    "tc": "0.5.x"
   },
   "optionalDependencies": {},
   "engines": {
