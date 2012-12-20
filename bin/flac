@@ -6,6 +6,6 @@ if (!dir) {
     process.exit(1);
 }
 
-require('./../lib/index.js').scan(dir, function (objects) {
+require('./../lib/index.js').find(dir, function (objects) {
     console.log(JSON.stringify(objects, null, '  '));
 });

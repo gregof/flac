@@ -1,6 +1,6 @@
 //in
 var abc = require('abc');
-var indexer = require(tc.fixPath('../../lib/index.js'));
+var flac = require(tc.fixPath('../../lib/index.js'));
 
 abc.async.sequence(
     [
@@ -14,7 +14,7 @@ abc.async.sequence(
             ].join(';'), callback)
         },
         function (callback) {
-            indexer.scan('tmp', function (objects) {
+            flac.find('tmp', function (objects) {
                 tc.out(JSON.stringify(tc.sort(objects), null, '  '))
                 callback();
             })
@@ -25,7 +25,7 @@ abc.async.sequence(
             ].join(';'), callback)
         },
         function (callback) {
-            indexer.scan('tmp', function (objects) {
+            flac.find('tmp', function (objects) {
                 tc.out(JSON.stringify(tc.sort(objects), null, '  '))
                 callback();
             })
