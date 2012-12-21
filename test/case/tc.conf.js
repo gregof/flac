@@ -1,20 +1,22 @@
 {
     exec:'async',
     beforeEach: function (tc, callback) {
-        tc.filters = [
-            {
-                name: 'm', 
-                test: function (file) {
-                    return file === 'mod.json'
+        tc.options = {
+            filters: [
+                {
+                    name: 'm', 
+                    test: function (file) {
+                        return file === 'mod.json'
+                    }
+                },
+                {
+                    name: 'p', 
+                    test: function (file) {
+                        return file === 'pack'
+                    }
                 }
-            },
-            {
-                name: 'p', 
-                test: function (file) {
-                    return file === 'pack'
-                }
-            }
-        ];
+            ]
+        };
 
         tc.printObjects = function (objects) {
             objects.sort(function (a, b) {

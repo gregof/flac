@@ -14,7 +14,7 @@ abc.async.sequence(
             ].join(';'), callback)
         },
         function (callback) {
-            flac.find('tmp', tc.filters, function (objects) {
+            flac.find('tmp', tc.options, function (objects) {
                 tc.printObjects(objects);
                 callback();
             })
@@ -25,7 +25,7 @@ abc.async.sequence(
             ].join(';'), callback)
         },
         function (callback) {
-            flac.find('tmp', tc.filters, function (objects) {
+            flac.find('tmp', tc.options, function (objects) {
                 tc.printObjects(objects);
                 callback();
             })
