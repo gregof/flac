@@ -7,26 +7,26 @@ abc.async.sequence(
         function (callback) {
             tc.execConsole([
                 'mkdir tmp/a',
-                'echo \'{"name":"a"}\' > tmp/a/module.json',
+                'echo a > tmp/a/mod.json',
                 'mkdir tmp/b',
-                'echo \'{"name":"b"}\' > tmp/b/module.json',
-                'echo \'{"name":"pack"}\' > tmp/package.json'
+                'echo b > tmp/b/mod.json',
+                'echo p > tmp/pack'
             ].join(';'), callback)
         },
         function (callback) {
-            flac.find('tmp', function (objects) {
-                tc.out(JSON.stringify(tc.sort(objects), null, '  '))
+            flac.find('tmp', tc.filters, function (objects) {
+                tc.printObjects(objects);
                 callback();
             })
         },
         function (callback) {
             tc.execConsole([
-                'rm -r tmp/a'
+                'rm -r tmp/b'
             ].join(';'), callback)
         },
         function (callback) {
-            flac.find('tmp', function (objects) {
-                tc.out(JSON.stringify(tc.sort(objects), null, '  '))
+            flac.find('tmp', tc.filters, function (objects) {
+                tc.printObjects(objects);
                 callback();
             })
         }
@@ -37,42 +37,5 @@ abc.async.sequence(
     }
 );
 //out
-[
-  {
-    "type": "module",
-    "file": "a/module.json",
-    "desc": {
-      "name": "a"
-    }
-  },
-  {
-    "type": "module",
-    "file": "b/module.json",
-    "desc": {
-      "name": "b"
-    }
-  },
-  {
-    "type": "package",
-    "file": "package.json",
-    "desc": {
-      "name": "pack"
-    }
-  }
-]
-[
-  {
-    "type": "module",
-    "file": "b/module.json",
-    "desc": {
-      "name": "b"
-    }
-  },
-  {
-    "type": "package",
-    "file": "package.json",
-    "desc": {
-      "name": "pack"
-    }
-  }
-]
+[{"filter":"m","file":"a/mod.json","text":"a\n"},{"filter":"m","file":"b/mod.json","text":"b\n"},{"filter":"p","file":"pack","text":"p\n"}]
+[{"filter":"m","file":"a/mod.json","text":"a\n"},{"filter":"p","file":"pack","text":"p\n"}]

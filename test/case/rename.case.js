@@ -7,36 +7,36 @@ abc.async.sequence(
         function (callback) {
             tc.execConsole([
                 'mkdir tmp/a',
-                'echo \'{"name":"a"}\' > tmp/a/module.json',
+                'echo a > tmp/a/mod.json',
                 'mkdir tmp/b',
-                'echo \'{"name":"b"}\' > tmp/b/module.json'
+                'echo b > tmp/b/mod.json'
             ].join(';'), callback)
         },
         function (callback) {
-            flac.find('tmp', function (objects) {
-                tc.out(JSON.stringify(tc.sort(objects), null, '  '))
+            flac.find('tmp', tc.filters, function (objects) {
+                tc.printObjects(objects);
                 callback();
             })
         },
         function (callback) {
             tc.execConsole([
-                'mv tmp/b/module.json tmp/b/module2.json'
+                'mv tmp/b/mod.json tmp/b/mod2.json'
             ].join(';'), callback)
         },
         function (callback) {
-            flac.find('tmp', function (objects) {
-                tc.out(JSON.stringify(tc.sort(objects), null, '  '))
+            flac.find('tmp', tc.filters, function (objects) {
+                tc.printObjects(objects);
                 callback();
             })
         },
         function (callback) {
             tc.execConsole([
-                'mv tmp/b/module2.json tmp/b/module.json'
+                'mv tmp/b/mod2.json tmp/b/mod.json'
             ].join(';'), callback)
         },
         function (callback) {
-            flac.find('tmp', function (objects) {
-                tc.out(JSON.stringify(tc.sort(objects), null, '  '))
+            flac.find('tmp', tc.filters, function (objects) {
+                tc.printObjects(objects);
                 callback();
             })
         }
@@ -46,44 +46,6 @@ abc.async.sequence(
     }
 );
 //out
-[
-  {
-    "type": "module",
-    "file": "a/module.json",
-    "desc": {
-      "name": "a"
-    }
-  },
-  {
-    "type": "module",
-    "file": "b/module.json",
-    "desc": {
-      "name": "b"
-    }
-  }
-]
-[
-  {
-    "type": "module",
-    "file": "a/module.json",
-    "desc": {
-      "name": "a"
-    }
-  }
-]
-[
-  {
-    "type": "module",
-    "file": "a/module.json",
-    "desc": {
-      "name": "a"
-    }
-  },
-  {
-    "type": "module",
-    "file": "b/module.json",
-    "desc": {
-      "name": "b"
-    }
-  }
-]
+[{"filter":"m","file":"a/mod.json","text":"a\n"},{"filter":"m","file":"b/mod.json","text":"b\n"}]
+[{"filter":"m","file":"a/mod.json","text":"a\n"}]
+[{"filter":"m","file":"a/mod.json","text":"a\n"},{"filter":"m","file":"b/mod.json","text":"b\n"}]

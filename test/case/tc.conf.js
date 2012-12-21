@@ -1,6 +1,28 @@
 {
     exec:'async',
     beforeEach: function (tc, callback) {
+        tc.filters = [
+            {
+                name: 'm', 
+                test: function (file) {
+                    return file === 'mod.json'
+                }
+            },
+            {
+                name: 'p', 
+                test: function (file) {
+                    return file === 'pack'
+                }
+            }
+        ];
+
+        tc.printObjects = function (objects) {
+            objects.sort(function (a, b) {
+                return a.file > b.file ? 1 : -1
+            })
+          tc.out(JSON.stringify(objects))
+        }
+
         tc.execConsole = function exec (command, callback) {
             require('child_process').exec(command, function (err, stdout, stderr) {
                 console.log(command);
@@ -10,12 +32,7 @@
                 callback();
             });
         };
-        tc.sort = function (arr) {
-            arr.sort(function (a, b) {
-                return a.desc.name > b.desc.name ? 1 : -1
-            })
-            return arr;
-        }
+
         tc.execConsole('mkdir tmp', callback);
     },
     afterEach: function (tc, callback) {
