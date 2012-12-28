@@ -2,6 +2,6 @@ test:
 	node ../node_modules/tc/bin/tc case
 
 clean:
-	rm -rf case/src/.flac
+	rm -rf tmp
 
 .PHONY : test
