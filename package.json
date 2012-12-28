@@ -9,7 +9,7 @@
   "version": "0.2.0",
   "dependencies": {
     "abc": "0.5.x",
-    "fsa": "0.3.x"    
+    "fsa": "0.4.x"    
   },
   "devDependencies": {
     "tc": "0.5.x"
