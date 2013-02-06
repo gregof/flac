@@ -49,8 +49,8 @@ Result:
         "text": "..."
     },
     {
-        "filter": "p",
-        "file": "package",
+        "filter": "package",
+        "file": "package.json",
         "text": "..."
     }
 ]
