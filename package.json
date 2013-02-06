@@ -6,10 +6,10 @@
     "url": "http://github.com/gregof"
   },
   "description": "Find, Load and make the Cache",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "dependencies": {
     "abc": "0.5.x",
-    "fsa": "0.4.x"    
+    "fsa": "0.5.x"    
   },
   "devDependencies": {
     "tc": "0.5.x"
