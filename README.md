@@ -25,7 +25,7 @@ var flacOptions = {
         {
             name: 'package', 
             test: function (file) {
-                return file === 'pack.json'
+                return file === 'package.json'
             }
         }
     ],
