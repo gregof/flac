@@ -29,7 +29,7 @@ var flacOptions = {
             }
         }
     ],
-    noCache: false // not required, becouse false is default value
+    noCache: false // not required, becouse 'false' is default value
 };
 flac.find('test', flacOptions, function (res) {
     // print result
