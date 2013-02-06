@@ -12,7 +12,7 @@ test
   b
     module.json
 ```
-Define filters and exec flac.find for `test` directory.
+Define filters and exec `flac.find` for `test` directory.
 ```javascript
 var flacOptions = {
     filters: [
