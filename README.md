@@ -2,6 +2,8 @@
 Find, Load and make the Cache.
 Caching made by [fsa](https://github.com/gregof/fsa).
 
+If your filters are changed, you have to `clearCache`, because filters doesn't apply to cached objects.
+
 ## Example
 File structure:
 ```
