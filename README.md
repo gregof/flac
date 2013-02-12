@@ -14,7 +14,7 @@ test
   b
     module.json
 ```
-Define filters and exec flac.find for 'test' directory.
+Define filters and exec `flac.find` for `test` directory.
 ```javascript
 var flacOptions = {
     filters: [
@@ -27,11 +27,11 @@ var flacOptions = {
         {
             name: 'package', 
             test: function (file) {
-                return file === 'pack.json'
+                return file === 'package.json'
             }
         }
     ],
-    noCache: false // not required, becouse false is default value
+    noCache: false // not required, becouse 'false' is default value
 };
 flac.find('test', flacOptions, function (res) {
     // print result
@@ -51,8 +51,8 @@ Result:
         "text": "..."
     },
     {
-        "filter": "p",
-        "file": "package",
+        "filter": "package",
+        "file": "package.json",
         "text": "..."
     }
 ]
