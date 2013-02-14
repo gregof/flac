@@ -31,7 +31,8 @@ var flacOptions = {
             }
         }
     ],
-    noCache: false // not required, becouse 'false' is default value
+    noCache: false, // not required, default value 'false'
+    cacheDir: '.custom' // not required, default value '.flac'
 };
 flac.find('test', flacOptions, function (res) {
     // print result

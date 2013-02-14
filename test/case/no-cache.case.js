@@ -19,7 +19,7 @@ abc.async.sequence(
                 tc.printObjects(objects);
                 fs.exists('tmp/.flac', function (exists) {
                     if (exists) {
-                        tc.out('ERROR: cache dir found!');
+                        tc.out('ERROR: cache dir is found!');
                     }
                     callback();
                 })
